@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+/*:root[data-theme="light"] {
+    --text: rgb(19, 14, 1);
+    --background: rgb(245, 245, 255);
+    --primary: rgb(129, 126, 205);
+    --secondary: rgb(227, 225, 244);
+    --accent: rgb(48, 64, 156);
+}
+*/
+:root {
+    --text: rgb(193, 199, 235);
+    --background: rgb(0, 0, 24);
+    --primary: rgb(53, 50, 129);
+    --secondary: rgb(21, 19, 46);
+    --accent: rgb(113, 129, 221);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+.container {
+    padding-left: 6rem;
+    padding-right: 6rem;
+}
+.flex {
+    display: flex;
+    align-items: center;
+}
+.grid {
+    display: grid;
+    align-items: center;
+}
+
+img,video {
+    width: 100%;
+    height: auto;
+}
+
+body {
+    background: var(--background);
+}
+
+.App {
+    height: 100vh;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.navbarContainer {
+    color: var(--accent);
+    padding-top: 3rem;
+    justify-content: space-between;
+}
+.navbarContainer .logoDiv{
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+}
+.modeContainer {
+    gap:1rem;
+}
+.modeContainer .modeSwitcher {
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color: var(--text);
+    font-size: 38px;
+}
+.mainContainer {
+    width: 100%;
+    color:var(--text);
+}
+.mainContainer a {
+    color: var(--text);
+}
+.resultContainer {
+    padding: 5rem;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    flex-direction: column;
+}
+.resultContainer .result {
+    padding: 2rem;
+}
+.resultContainer .result a{
+    flex-direction: column;
+}
+.resultContainer .result h2 {
+    font-size: 22px;
+    color: rgb(85, 81, 192);
+}
+.footerContainer {
+    box-shadow: 0px -.5px 0px 0px var(--accent);
+    color: var(--text);
+    justify-content: center;
+}
+.footerContainer .footerText {
+    font-size: 14px;
+    margin: 1rem;
+}

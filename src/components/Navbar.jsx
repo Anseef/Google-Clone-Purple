@@ -12,16 +12,15 @@ const Navbar = ({ darkTheme, setDarkTheme }) => {
   };
 
   return (
-    <section className="NavbarContainer">
+    <section className="navbarContainer flex container">
       <a href="/" className="logoDiv">
-        <span>GoogleXPurple</span>
+        <h1>Google</h1>
       </a>
-
       <Search />
 
-      <div className="modeContainer">
+      <div className="modeContainer flex">
         <span>Light</span>
-        <button className="modeSwitcher" onClick={handleModeToggle}>
+        <button className="modeSwitcher grid" onClick={handleModeToggle}>
           {mode === "dark" ? <RiToggleLine /> : <RiToggleFill />}
         </button>
         <span>Dark</span>
