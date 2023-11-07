@@ -1,12 +1,12 @@
 import React, { createContext, useContext, useState } from 'react';
 const ResultContext = createContext();
-const baseUrl = "https://google-search74.p.rapidapi.com";
+const baseUrl = "https://google-web-search1.p.rapidapi.com/";
 
 export const ResultContextProvider = ({ children }) => {    
     const [results, setResults] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [searchTerm, setSearchTerm] = useState('');
-
+    
     const getResults = async (type) => {
         setIsLoading(true);
 
@@ -14,8 +14,8 @@ export const ResultContextProvider = ({ children }) => {
         const options = {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'aac0cbe9cdmsheb7d1c93a3db71fp145beejsn3ea592a14206',
-                'X-RapidAPI-Host': 'google-search74.p.rapidapi.com'
+                'X-RapidAPI-Key': '2fc547931cmshf7a783f3518af57p149a69jsn0c90329c8145',
+                'X-RapidAPI-Host': 'google-web-search1.p.rapidapi.com'
             }
         };
         
@@ -25,7 +25,6 @@ export const ResultContextProvider = ({ children }) => {
             console.log(results);
             setResults(results);
         } catch (error) {
-            console.error(error);
         }
         setIsLoading(false);
     }

@@ -1,32 +1,39 @@
-import React, { useState } from 'react';
-import { RiToggleLine, RiToggleFill } from 'react-icons/ri';
-import Search from './Search';
+import React from 'react';
+import ModeSwitcher from './ModeSwitcher';
+import InputField from './inputField';
+import { useResultContext } from './ResultContextProvider';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Navbar = ({ darkTheme, setDarkTheme }) => {
-  const [mode, setMode] = useState("dark");
+  const { searchTerm, setSearchTerm } = useResultContext();
 
-  const handleModeToggle = () => {
-    setDarkTheme(!darkTheme);
-    setMode((prevMode) => (prevMode === "dark" ? "light" : "dark"));
-    console.log(darkTheme);
+  const handleSearchTermChange = (newSearchTerm) => {
+    setSearchTerm(newSearchTerm);
   };
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    if(searchTerm !== ''){
+      navigate(`/search?query=${searchTerm}`);
+    }
+  };
+
 
   return (
     <section className="navbarContainer flex container">
-      <a href="/" className="logoDiv">
+      <Link to="/" className='logoDiv'>
         <h1>Google</h1>
-      </a>
-      <Search />
-
-      <div className="modeContainer flex">
-        <span>Light</span>
-        <button className="modeSwitcher grid" onClick={handleModeToggle}>
-          {mode === "dark" ? <RiToggleLine /> : <RiToggleFill />}
-        </button>
-        <span>Dark</span>
+      </Link>
+      <div className="searchContainer flex">
+        <InputField
+          searchTerm={searchTerm}
+          setSearchTerm={handleSearchTermChange}
+        />
+        <button className="searchBtn" onClick={handleSearch}>Search</button>
       </div>
-
+      <ModeSwitcher darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
     </section>
   );
 };
+
 export default Navbar;

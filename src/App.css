@@ -60,19 +60,101 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
+.homeContainer {
+    margin-top: 1rem;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    color: var(--text);
+}
+
+.homeContainer .mainHeader {
+    margin-top: 8rem;
+    font-size: 8rem;
+    font-weight: 600;
+}
+
+.inputField {
+    border-radius: 2rem;
+    border: 2px solid var(--accent);
+    padding: 1rem 2rem 1rem 2rem;
+    width: 40rem;
+    justify-content: space-between;
+    color: var(--text);
+}
+
+.inputField .icon {
+    font-size: 1.4rem;
+    margin-right: .5rem;
+}
+
+.inputField input,button {
+    font-size: 1rem;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    color: var(--text);
+}
+
+.inputField input {
+    width: 100%;
+}
+
+.inputField input::placeholder {
+    color: var(--accent);
+}
+
+.inputField button {
+    cursor: pointer;
+}
+
+.buttonDiv {
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.buttonDiv button {
+    font-size: 16px;
+    border-radius: .4rem;
+    background: var(--primary);
+    padding: .8rem;
+    cursor: pointer;
+}
+.searchMainContainer {
+    flex-direction: column;
+    width: 100%;
+}
 .navbarContainer {
+    width: 100%;
     color: var(--accent);
     padding-top: 3rem;
     justify-content: space-between;
 }
+.navbarContainer .inputField {
+    padding: .7rem 2rem .7rem 2rem;
+    width: 28rem;
+}
 .navbarContainer .logoDiv{
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 700;
     color: var(--text);
 }
+.navbarContainer .searchContainer {
+    gap: .5rem;
+}
+.navbarContainer .searchContainer .searchBtn {
+    padding: .8rem 1rem;
+    background: var(--primary);
+    border-radius: .6rem;
+    cursor: pointer;
+}
+
+
 .modeContainer {
     gap:1rem;
 }
+
 .modeContainer .modeSwitcher {
     background: transparent;
     outline: 0;
@@ -80,34 +162,52 @@ body {
     color: var(--text);
     font-size: 38px;
 }
+
 .mainContainer {
     width: 100%;
     color:var(--text);
 }
+
 .mainContainer a {
     color: var(--text);
 }
+
 .resultContainer {
-    padding: 5rem;
+    width: 90%;
+    padding: 3rem;
     grid-template-columns: repeat(2, 1fr);
-    width: 100%;
     flex-direction: column;
 }
+
 .resultContainer .result {
     padding: 2rem;
 }
+
 .resultContainer .result a{
     flex-direction: column;
+    color: var(--text);
 }
+
 .resultContainer .result h2 {
     font-size: 22px;
     color: rgb(85, 81, 192);
 }
+
+.errorField {
+    color: var(--accent);
+    justify-content: center;
+}
+.errorField img {
+    object-fit: cover;
+}
+
 .footerContainer {
+    width: 100%;
     box-shadow: 0px -.5px 0px 0px var(--accent);
     color: var(--text);
     justify-content: center;
 }
+
 .footerContainer .footerText {
     font-size: 14px;
     margin: 1rem;
