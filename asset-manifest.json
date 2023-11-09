@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/Google-Clone-Purple/static/css/main.4ab1b170.css",
+    "main.js": "/Google-Clone-Purple/static/js/main.9b8d5c40.js",
+    "static/media/ErrorDog.png": "/Google-Clone-Purple/static/media/ErrorDog.df103b6bd223d32ef855.png",
+    "index.html": "/Google-Clone-Purple/index.html",
+    "main.4ab1b170.css.map": "/Google-Clone-Purple/static/css/main.4ab1b170.css.map",
+    "main.9b8d5c40.js.map": "/Google-Clone-Purple/static/js/main.9b8d5c40.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4ab1b170.css",
+    "static/js/main.9b8d5c40.js"
+  ]
+}
