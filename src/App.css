@@ -6,20 +6,19 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
 }
-/*:root[data-theme="light"] {
-    --text: rgb(19, 14, 1);
-    --background: rgb(245, 245, 255);
-    --primary: rgb(129, 126, 205);
-    --secondary: rgb(227, 225, 244);
-    --accent: rgb(48, 64, 156);
+:root[data-theme="light"] {
+    --text: rgb(23, 30, 128);
+    --background: rgb(228, 228, 248);
+    --primary: rgb(99, 96, 194);
+    --active: rgb(232, 231, 241);
+    --accent: rgb(51, 67, 158);
 }
-*/
-:root {
+:root[data-theme="dark"] {
     --text: rgb(193, 199, 235);
     --background: rgb(0, 0, 24);
     --primary: rgb(53, 50, 129);
-    --secondary: rgb(21, 19, 46);
-    --accent: rgb(113, 129, 221);
+    --active: rgb(190, 186, 235);
+    --accent: rgb(106, 125, 235);
 }
 
 html {
@@ -78,7 +77,7 @@ body {
     border-radius: 2rem;
     border: 2px solid var(--accent);
     padding: 1rem 2rem 1rem 2rem;
-    width: 38rem;
+    width: 37rem;
     justify-content: space-between;
     color: var(--text);
 }
@@ -89,15 +88,16 @@ body {
 }
 
 .inputField input,button {
-    font-size: 1rem;
+    font-size: .95rem;
     background: transparent;
     outline: 0;
     border: 0;
-    color: var(--text);
 }
 
 .inputField input {
     width: 100%;
+    color: var(--text);
+    font-weight: 500;
 }
 
 .inputField input::placeholder {
@@ -106,6 +106,7 @@ body {
 
 .inputField button {
     cursor: pointer;
+    color: var(--text);
 }
 
 .buttonDiv {
@@ -117,6 +118,7 @@ body {
     font-size: 16px;
     border-radius: .4rem;
     background: var(--primary);
+    color: var(--active);
     padding: .8rem;
     cursor: pointer;
 }
@@ -127,8 +129,10 @@ body {
 .navbarContainer {
     width: 100%;
     color: var(--accent);
-    padding-top: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 1.5rem;
     justify-content: space-between;
+    box-shadow: 0px 1px 0px 0px var(--accent);
 }
 .navbarContainer .inputField {
     padding: .7rem 1rem .7rem 1rem;
@@ -147,11 +151,8 @@ body {
     background: var(--primary);
     border-radius: .6rem;
     cursor: pointer;
-}
-
-
-.modeContainer {
-    gap:1rem;
+    color: var(--active);
+    font-weight: 500;
 }
 
 .modeContainer .modeSwitcher {
@@ -159,7 +160,8 @@ body {
     outline: 0;
     border: 0;
     color: var(--text);
-    font-size: 38px;
+    font-size: 28px;
+    cursor: pointer;
 }
 
 .mainContainer {
@@ -172,8 +174,8 @@ body {
 }
 
 .resultContainer {
-    width: 90%;
-    padding: 3rem;
+    width: 95%;
+    padding: 2.6rem;
     grid-template-columns: repeat(2, 1fr);
     flex-direction: column;
 }
@@ -189,7 +191,7 @@ body {
 
 .resultContainer .result h2 {
     font-size: 22px;
-    color: rgb(85, 81, 192);
+    color: var(--accent);
 }
 
 .errorField {
@@ -233,15 +235,15 @@ body {
         margin-top: 1rem;
         border-radius: 2rem;
         border: 2px solid var(--accent);
-        padding: .6rem 1rem .6rem 1rem;
-        width: 20rem;
+        padding: .7rem 1rem .7rem 1rem;
+        width: 18rem;
         max-width: 90%;
         justify-content: space-between;
         color: var(--text);
     }
 
     .inputField input,button {
-        font-size: .8rem;
+        font-size: .75rem;
         background: transparent;
         outline: 0;
         border: 0;
@@ -265,31 +267,28 @@ body {
     }
 
     .navbarContainer {
+        width: 100%;
+        justify-content: right;
         padding: 0;
-        margin-top: 3rem;
-
+        margin-top: .8rem !important;
         flex-direction: column;
-    }
-    .navbarContainer .inputField {
-        padding: .6rem 1rem .6rem 1rem;
-        width: 17rem;
-        max-width: 80%;
+        box-shadow: none;
     }
 
     .navbarContainer .logoDiv{
-        font-size: 24px;
+        font-size: 22px;
     }
 
     .navbarContainer .searchContainer {
         width: 100%;
         justify-content: center;
-        padding: .5rem;
+        padding: .1rem;
         gap: .5rem;
     }
     
     .navbarContainer .searchContainer .searchBtn {
         margin-top: .9rem;
-        padding: .8rem .6rem;
+        padding: .8rem .8rem;
         background: var(--primary);
         border-radius: .6rem;
         cursor: pointer;
@@ -301,21 +300,17 @@ body {
     
     .resultContainer {
         max-width: 100%;
-        padding: 1rem;
+        padding: .5rem;
         grid-template-columns: repeat(1, 1fr);
         flex-direction: column;
     }
     
-    .resultContainer .result {
-        padding-top: 1rem;
-    }
-    
     .resultContainer .result a{
-        font-size: 14px;
+        font-size: 12px;
     }
     
     .resultContainer .result h2 {
-        font-size: 20px;
+        font-size: 14px;
     }
     
     .errorField {
@@ -341,16 +336,17 @@ body {
     }
 
     .navbarContainer {
-        margin-top: 1.5rem;
+        margin-top: 1.4rem;
         padding: 2rem;
     }
     .navbarContainer .inputField {
-        padding: .6rem 1rem .6rem 1rem;
-        width: 18rem;
+        padding: .5rem .8rem .5rem .8rem;
+        width: 17rem;
+        font-size: 14px;
     }
-
-    .navbarContainer .logoDiv{
-        font-size: 26px;
+    .navbarContainer .searchContainer .searchBtn {
+        font-size: 12px;
+        padding: .8rem .9rem;
     }
 
     .modeContainer {
@@ -361,9 +357,12 @@ body {
     }
 
     .resultContainer {
-        padding: 1rem;
+        padding-top: 0;
         grid-template-columns: repeat(1, 1fr);
         flex-direction: column;
+    }
+    .resultContainer .result {
+        padding-bottom: 2rem;
     }
     
     .resultContainer .result a{
@@ -371,7 +370,7 @@ body {
     }
     
     .resultContainer .result h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
     .errorField {
         padding: 2rem;
